@@ -1,0 +1,34 @@
+/* 
+ * Author: Jeremiah Bagula
+ * Purpose:
+ * 	This file is a file of mixins I have compiled from across the net and other
+ * 	resources to create a mixin library*
+ * 
+ */
+
+// Add vender prefixes to the property
+$default-prefixes: ("-webkit-","-moz-", "-o-", "-ms-", "");
+@mixin prefix($property, $value, $prefixes: $default-prefixes) {
+    @each $prefix in $prefixes {
+        #{$prefix}#{$property}: #{$value};
+    }
+}
+
+// Using the @content for developing the styles to avoid the bloat
+@mixin activeFocus {
+    &:active, &:focus {
+        @content;
+    }
+}
+
+// Add the hover effect to an element
+@mixin hover {
+	&:hover {
+		@content;
+	}
+}
+
+// CSS3 Compatible
+@mixin emboss-box($shadowOpacity, $insetOpacity) {
+    box-shadow: white($shadowOpacity) 0 1px 0, inset black($insetOpacity) 0 1px 0;
+}
