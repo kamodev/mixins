@@ -33,50 +33,13 @@ $default-prefixes: ("-webkit-","-moz-", "-o-", "-ms-", "");
     box-shadow: white($shadowOpacity) 0 1px 0, inset black($insetOpacity) 0 1px 0;
 }
 
-// List of the Modernizr classes
+/// List of the Modernizr classes
 $ClassList: (
-    "applicationcache",
-    "audio ",
-    "backgroundsize",
-    "borderimage",
-    "borderradius",
-    "boxshadow",
-    "canvas",
-    "canvastext",
-    "cssanimations",
-    "csscolumns",
-    "cssgradients",
-    "cssreflections",
-    "csstransforms",
-    "csstransforms3d",
-    "csstransitions",
-    "draganddrop",
-    "flexbox",
-    "fontface",
-    "generatedcontent",
-    "geolocation",
-    "hashchange",
-    "history",
-    "hsla",
-    "indexeddb",
-    "inlinesvg",
-    "js",
-    "localstorage",
-    "multiplebgs",
-    "opacity",
-    "postmessage",
-    "rgba",
-    "sessionstorage",
-    "smil",
-    "svg",
-    "svgclippaths",
-    "textshadow",
-    "touch",
-    "video",
-    "webgl",
-    "websockets",
-    "websqldatabase",
-    "webworkers"
+    "applicationcache", "audio ", "backgroundsize", "borderimage", "borderradius", "boxshadow", "canvas",
+    "canvastext", "cssanimations", "csscolumns", "cssgradients", "cssreflections", "csstransforms", "csstransforms3d",
+    "csstransitions", "draganddrop", "flexbox", "fontface", "generatedcontent", "geolocation", "hashchange", "history",
+    "hsla", "indexeddb", "inlinesvg", "js", "localstorage", "multiplebgs", "opacity", "postmessage", "rgba", "sessionstorage",
+    "smil", "svg", "svgclippaths", "textshadow", "touch", "video", "webgl", "websockets", "websqldatabase", "webworkers"
 );
 
 // The mixin to generate the class
@@ -92,6 +55,7 @@ $ClassList: (
     }
 }
 
+// Mixin to genrate the class with no- prefix
 @mixin NoModClass($class)
 {
     @each $mclass in $ClassList {
