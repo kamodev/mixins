@@ -32,3 +32,74 @@ $default-prefixes: ("-webkit-","-moz-", "-o-", "-ms-", "");
 @mixin emboss-box($shadowOpacity, $insetOpacity) {
     box-shadow: white($shadowOpacity) 0 1px 0, inset black($insetOpacity) 0 1px 0;
 }
+
+// List of the Modernizr classes
+$ClassList: (
+    "applicationcache",
+    "audio ",
+    "backgroundsize",
+    "borderimage",
+    "borderradius",
+    "boxshadow",
+    "canvas",
+    "canvastext",
+    "cssanimations",
+    "csscolumns",
+    "cssgradients",
+    "cssreflections",
+    "csstransforms",
+    "csstransforms3d",
+    "csstransitions",
+    "draganddrop",
+    "flexbox",
+    "fontface",
+    "generatedcontent",
+    "geolocation",
+    "hashchange",
+    "history",
+    "hsla",
+    "indexeddb",
+    "inlinesvg",
+    "js",
+    "localstorage",
+    "multiplebgs",
+    "opacity",
+    "postmessage",
+    "rgba",
+    "sessionstorage",
+    "smil",
+    "svg",
+    "svgclippaths",
+    "textshadow",
+    "touch",
+    "video",
+    "webgl",
+    "websockets",
+    "websqldatabase",
+    "webworkers"
+);
+
+// The mixin to generate the class
+@mixin ModClass($class)
+{
+    @each $mclass in $ClassList {
+        @if $mclass == $class {
+            .#{$class}
+            {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin NoModClass($class)
+{
+    @each $mclass in $ClassList {
+        @if $mclass == $class {
+            .no-#{$class}
+            {
+                @content;
+            }
+        }
+    }
+}
