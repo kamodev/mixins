@@ -1,0 +1,4 @@
+// CSS3 mixins
+@mixin emboss-box($shadowOpacity, $insetOpacity) {
+  box-shadow: white($shadowOpacity) 0 1px 0, inset black($insetOpacity) 0 1px 0;
+}

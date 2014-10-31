@@ -1,0 +1,60 @@
+// Using the @content for developing the styles to avoid the bloat
+@mixin activeFocus {
+  &:active, &:focus {
+    @content;
+  }
+}
+
+// Add the hover effect to an element
+@mixin hover {
+  &:hover {
+    @content;
+  }
+}
+
+// Micro clear fix
+@mixin ClearFix()
+{
+  &:before,
+  &:after
+  {
+    content: "";
+    display: table;
+  }
+
+  &:after
+  {
+    clear: both;
+  }
+}
+
+// Center an element via CSS
+@mixin center-block($dis: block, $pos: relative)
+{
+  display: $dis;
+  margin: 0 auto;
+  position: $pos;
+}
+
+// Absolute position the class, id, or element
+@mixin abs ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  position: absolute;
+}
+
+// Style links
+@mixin Link($color, $text-dec: underline) {
+  color: $color;
+  text-decoration: none;
+
+  &:hover,
+  &:active,
+  &:focus
+  {
+    color: lighten($color, 20%);
+    text-decoration: $text-dec;
+  }
+}
