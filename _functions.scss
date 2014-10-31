@@ -1,0 +1,26 @@
+// Basic colors for use elsewhere in the styles
+@function black($opacity: 0.5)
+{
+  @return rgba(0,0,0,$opacity)
+}
+
+@function red($opacity: 0.5)
+{
+  @return rgba(255,0,0,$opacity)
+}
+
+@function green($opacity: 0.5)
+{
+  @return rgba(0,255,0,$opacity)
+}
+
+@function blue($opacity: 0.5)
+{
+  @return rgba(0,0,255,$opacity)
+}
+
+@function white($opacity)
+{
+  @return rgba(255,255,255,$opacity)
+}
+
